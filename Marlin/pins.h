@@ -2089,7 +2089,7 @@
 
 #endif
 
-
+#include "custom_boards.h"
 
 #ifndef KNOWN_BOARD
 #error Unknown MOTHERBOARD value in configuration.h

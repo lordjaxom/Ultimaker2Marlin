@@ -56,7 +56,7 @@
 // 21 = Elefu Ra Board (v3)
 
 #ifndef MOTHERBOARD
-#define MOTHERBOARD 72
+#define MOTHERBOARD 721
 #endif
 
 // Define this to set a custom name for your generic Mendel,
@@ -274,16 +274,16 @@
 // #define COREXY
 
 // coarse Endstop Settings
-#define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
+//#define ENDSTOPPULLUPS // Comment this out (using // at the start of the line) to disable the endstop pullup resistors
 
 #ifndef ENDSTOPPULLUPS
   // fine Enstop settings: Individual Pullups. will be ignored if ENDSTOPPULLUPS is defined
   #define ENDSTOPPULLUP_XMAX
   #define ENDSTOPPULLUP_YMAX
-  #define ENDSTOPPULLUP_ZMAX
+  //#define ENDSTOPPULLUP_ZMAX
   #define ENDSTOPPULLUP_XMIN
   #define ENDSTOPPULLUP_YMIN
-  //#define ENDSTOPPULLUP_ZMIN
+  #define ENDSTOPPULLUP_ZMIN
 #endif
 
 #ifdef ENDSTOPPULLUPS

@@ -126,6 +126,11 @@ else ifeq  ($(HARDWARE_MOTHERBOARD),72)
 HARDWARE_VARIANT ?= arduino
 MCU              ?= atmega2560
 
+#Ultimaker with Jax customizations
+else ifeq  ($(HARDWARE_MOTHERBOARD),721)
+HARDWARE_VARIANT ?= arduino
+MCU              ?= atmega2560
+
 #Teensylu
 else ifeq  ($(HARDWARE_MOTHERBOARD),8)
 HARDWARE_VARIANT ?= Teensy
