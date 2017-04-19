@@ -199,9 +199,14 @@
     //#define  DEFAULT_Kd 114
 
 // Ultimaker2
-    #define  DEFAULT_Kp 10.0
-    #define  DEFAULT_Ki 2.5
-    #define  DEFAULT_Kd 100.0
+    //#define  DEFAULT_Kp 10.0
+    //#define  DEFAULT_Ki 2.5
+    //#define  DEFAULT_Kd 100.0
+
+// Ultimaker2 40W
+    #define  DEFAULT_Kp 11.52
+    #define  DEFAULT_Ki 0.94
+    #define  DEFAULT_Kd 35.36
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
