@@ -344,7 +344,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define X_MIN_POS 0
 #define Y_MAX_POS 224.5 // 224.5=Ultimaker, 219.5=E3D
 #define Y_MIN_POS 0
-#define Z_MAX_POS 230 // 230=Ultimaker, 220=E3D
+#define Z_MAX_POS 225 // 230=Ultimaker, 225=Olsson, 220=E3D
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
