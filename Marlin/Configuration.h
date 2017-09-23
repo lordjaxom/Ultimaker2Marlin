@@ -204,9 +204,14 @@
     //#define  DEFAULT_Kd 100.0
 
 // Ultimaker2 40W
-    #define  DEFAULT_Kp 11.52
-    #define  DEFAULT_Ki 0.94
-    #define  DEFAULT_Kd 35.36
+    //#define  DEFAULT_Kp 11.52
+    //#define  DEFAULT_Ki 0.94
+    //#define  DEFAULT_Kd 35.36
+
+// Ultimaker2 E3D 40W
+    #define DEFAULT_Kp 18.55
+    #define DEFAULT_Ki 1.72
+    #define DEFAULT_Kd 49.41
 
 // Makergear
 //    #define  DEFAULT_Kp 7.0
@@ -327,7 +332,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define INVERT_X_DIR true     // for Mendel set to false, for Orca set to true
 #define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR true     // for Mendel set to false, for Orca set to true
-#define INVERT_E0_DIR true   // for direct drive extruder v9 set to true, for geared extruder set to false
+#define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR true    // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E2_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 
@@ -340,11 +345,11 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define min_software_endstops true // If true, axis won't move to coordinates less than HOME_POS.
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 // Travel limits after homing
-#define X_MAX_POS 230 // 230=Ultimaker, 210=E3D
+#define X_MAX_POS 230 // 230=Ultimaker, 215=E3D
 #define X_MIN_POS 0
 #define Y_MAX_POS 224.5 // 224.5=Ultimaker, 219.5=E3D
 #define Y_MIN_POS 0
-#define Z_MAX_POS 225 // 230=Ultimaker, 225=Olsson, 220=E3D
+#define Z_MAX_POS 225 // 230=Ultimaker, 225=Olsson, E3D
 #define Z_MIN_POS 0
 
 #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
@@ -369,7 +374,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 // default settings
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {80.0,80.0,200,369}  // default steps per unit for ultimaker2
-#define DEFAULT_MAX_FEEDRATE          {300, 300, 40, 60}    // (mm/sec)
+#define DEFAULT_MAX_FEEDRATE          {300, 300, 40, 150}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          3000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
@@ -586,7 +591,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 
 // Configuration of behaviors at the start and end of prints
-#define END_OF_PRINT_RETRACTION 20		// number of mm to retract when printer goes idle
+#define END_OF_PRINT_RETRACTION 10		// number of mm to retract when printer goes idle
 #define END_OF_PRINT_RECOVERY_SPEED 5 	// speed to recover that assumed retraction at (mm/s)
 #define PRIMING_MM3	50					// number of mm^3 of plastic to extrude when priming
 										// (Ultimaker 2 hot end capacity is approx 80 mm^3)
