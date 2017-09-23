@@ -30,7 +30,7 @@ void lcd_menu_maintenance()
     if (lcd_lib_button_pressed)
     {
         if (IS_SELECTED_MAIN(0))
-            lcd_change_to_menu(lcd_menu_first_run_start_bed_leveling);
+            lcd_change_to_menu(lcd_menu_first_run_quick_bed_leveling);
         else if (IS_SELECTED_MAIN(1))
             lcd_change_to_menu(lcd_menu_maintenance_advanced);
         else if (IS_SELECTED_MAIN(2))
@@ -85,6 +85,8 @@ static char* lcd_advanced_item(uint8_t nr)
     else if (nr == 10 + BED_MENU_OFFSET + EXTRUDERS * 2)
         strcpy_P(card.longFilename, PSTR("Runtime stats"));
     else if (nr == 11 + BED_MENU_OFFSET + EXTRUDERS * 2)
+        strcpy_P(card.longFilename, PSTR("Reset buildplate"));
+    else if (nr == 12 + BED_MENU_OFFSET + EXTRUDERS * 2)
         strcpy_P(card.longFilename, PSTR("Factory reset"));
     else
         strcpy_P(card.longFilename, PSTR("???"));
@@ -219,6 +221,8 @@ static void lcd_menu_maintenance_advanced()
         else if (IS_SELECTED_SCROLL(10 + BED_MENU_OFFSET + EXTRUDERS * 2))
             lcd_change_to_menu(lcd_menu_advanced_stats, SCROLL_MENU_ITEM_POS(0));
         else if (IS_SELECTED_SCROLL(11 + BED_MENU_OFFSET + EXTRUDERS * 2))
+            lcd_change_to_menu(lcd_menu_first_run_start_bed_leveling);
+        else if (IS_SELECTED_SCROLL(12 + BED_MENU_OFFSET + EXTRUDERS * 2))
             lcd_change_to_menu(lcd_menu_advanced_factory_reset, SCROLL_MENU_ITEM_POS(1));
     }
 }

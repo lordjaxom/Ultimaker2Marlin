@@ -68,7 +68,7 @@ static void homeAndParkHeadForCenterAdjustment2()
     sprintf_P(buffer, PSTR("G1 F%i Z%i X%i Y%i"), int(homing_feedrate[0]), 35, int(BED_CENTER_ADJUST_X), int(BED_CENTER_ADJUST_Y));
     enquecommand(buffer);
 }
-//Started bed leveling from the calibration menu
+//Started bed leveling from the advanced calibration menu
 void lcd_menu_first_run_start_bed_leveling()
 {
     lcd_question_screen(lcd_menu_first_run_bed_level_center_adjust, homeAndParkHeadForCenterAdjustment2, PSTR("CONTINUE"), lcd_menu_main, NULL, PSTR("CANCEL"));
@@ -247,6 +247,16 @@ static void lcd_menu_first_run_bed_level_paper_center()
     lcd_lib_draw_string_centerP(30, PSTR("until you feel a"));
     lcd_lib_draw_string_centerP(40, PSTR("bit resistance."));
     lcd_lib_update_screen();
+}
+// quick bed leveling from maintenance menu
+void lcd_menu_first_run_quick_bed_leveling()
+{
+    add_homeing[Z_AXIS] -= LEVELING_OFFSET;  //Adjust the Z homing position to account for the thickness of the paper.
+    enquecommand_P(PSTR("G28 X0 Y0 Z0"));
+    char buffer[32];
+    sprintf_P(buffer, PSTR("G1 F%i Z0 X%i Y%i"), int(homing_feedrate[0]), int(BED_CENTER_ADJUST_X), int(BED_CENTER_ADJUST_Y));
+    enquecommand(buffer);
+    lcd_change_to_menu(lcd_menu_first_run_bed_level_paper_center);
 }
 
 static void lcd_menu_first_run_bed_level_paper_left()

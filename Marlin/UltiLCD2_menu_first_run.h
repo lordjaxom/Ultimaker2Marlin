@@ -7,5 +7,6 @@
 
 void lcd_menu_first_run_init();
 void lcd_menu_first_run_start_bed_leveling();
+void lcd_menu_first_run_quick_bed_leveling();
 
 #endif//ULTI_LCD2_MENU_FIRST_RUN_H
